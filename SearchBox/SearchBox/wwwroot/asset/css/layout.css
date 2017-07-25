@@ -1,0 +1,25 @@
+﻿.album {
+    border: solid 1px green;
+    background: yellow;
+    padding: 5px;
+    margin: 5px;
+    width: 300px;
+    height: 300px;
+}
+
+.images {
+    border: solid 1px green;
+    width: 300px;
+    height: 250px;
+}
+
+.tableData {
+    border: solid 1px black;
+    width: 150px;
+}
+
+.tableHearder {
+    color: blue;
+    width: 200px;
+    border: solid 1px black;
+}
