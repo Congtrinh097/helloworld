@@ -1,7 +1,7 @@
 import {ProductModel} from "../model/product-model";
 import * as React from 'react';
 import { BootstrapTable, TableHeaderColumn,SizePerPageDropDown } from 'react-bootstrap-table';
-
+import {SweetAlertResultEnums, SweetAlerts, SweetAlertTypeEnums} from "../commons/sweet-alert";
 
 // var productItems:ProductModel[] = [
 //   { Id: 1, name:'Test', price: 120 , category: 'Category1', stocked: 1},
@@ -11,15 +11,22 @@ import { BootstrapTable, TableHeaderColumn,SizePerPageDropDown } from 'react-boo
 //   { Id: 5, name:'Test', price: 120 , category: 'Category1', stocked: 1},
 // ]
 
+interface thisState {
+  isShow?: boolean,
+  data?: any
+}
 
+interface thisProps {
+  isShow?: boolean,
+}
 
-  export class TableDataBootStrap extends React.Component<any,any>
+  export class TableDataBootStrap extends React.Component<thisProps,thisState>
   {
     componentWillMount(){
       this.setState({})
     }
 
-    async getData(): Promise<any> {
+    async getData(){
 
       let result = await fetch('/api/product/get_all',
         {
@@ -47,8 +54,17 @@ import { BootstrapTable, TableHeaderColumn,SizePerPageDropDown } from 'react-boo
 
     }
 
+    show() {
+      this.setState({isShow: true});
+    }
+
+    hide() {
+      this.setState({isShow: false});
+    }
+
     async postDelete(url:string, data:number)
     {
+      debugger;
       let result = await fetch(url,
         {
           headers: {
@@ -63,26 +79,44 @@ import { BootstrapTable, TableHeaderColumn,SizePerPageDropDown } from 'react-boo
 
       if (result.ok){
 
-        this.setState({
-          isSuccess: true,
-          MessageShow:  await result.text()
-        })
+        return true;
 
       }else{
-
-        this.setState({
-          isSuccess: true,
-          MessageShow: "Request failed with unknow error"
-        })
-
+        return false;
       }
     }
 
-    ClickDelete(id:number){
-
-      this.postDelete("/api/product/remove",id);
+    async ClickDelete(id:number){
       debugger;
+      let result = await SweetAlerts.show({
+        title: 'Confirmation',
+        text: 'Are you sure?',
+        type: SweetAlertTypeEnums.Warning,
+        showCancelButton: true,
+        confirmButtonText: 'Delete',
+      });
 
+      if (result == SweetAlertResultEnums.Confirm) {
+
+        debugger;
+        let resultDelete  = await this.postDelete("/api/product/remove",id);
+        debugger;
+        if (resultDelete) {
+          SweetAlerts.show({
+            title: "Success",
+            text: 'Deleted Successfully'
+          });
+          this.getData();
+        }else {
+          SweetAlerts.show({
+            title: "Error",
+            text: 'Cannot delete this item, please try again!'
+          });
+
+        }
+      }
+
+      debugger;
     }
 
     bindActionData(data: ProductModel) {
@@ -95,7 +129,7 @@ import { BootstrapTable, TableHeaderColumn,SizePerPageDropDown } from 'react-boo
 
     render(){
       debugger;
-      return (
+      return ( this.state.isShow ?
         <div>
           <BootstrapTable data={this.state.data}
                           keyField="Id"
@@ -145,7 +179,7 @@ import { BootstrapTable, TableHeaderColumn,SizePerPageDropDown } from 'react-boo
               Action</TableHeaderColumn>
 
           </BootstrapTable>
-        </div>
+        </div> : null
       )
     }
   }
