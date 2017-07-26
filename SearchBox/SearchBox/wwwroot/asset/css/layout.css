@@ -23,3 +23,13 @@
     width: 200px;
     border: solid 1px black;
 }
+
+.headerPage {
+    text-align: center;
+    border: solid black 1px;
+    background-color: #3596e0;
+}
+.central_button
+{
+    margin: auto;
+}

@@ -182,7 +182,7 @@ export class FilterableProductTable extends React.Component<FilterableTableProps
             this.setState({products: filteredProducts});
           }}
         />
-        <TableDataBootStrap productData={this.state.products}/>
+        <TableDataBootStrap />
         {/*<TableData*/}
         {/*products={this.state.products}*/}
       {/*/>*/}

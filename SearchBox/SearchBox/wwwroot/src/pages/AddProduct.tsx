@@ -74,92 +74,100 @@ export class AddProduct extends React.Component<any, thisState> {
 
   render() {
     return (
-        <div className="panel panel-default plain">
-          <div className="panel-body">
-            <form className="form-horizontal">
-              <div className="form-group">
-                <label className="col-sm-6 col-md-4 col-lg-4 control-label">Name</label>
-                <div className="col-sm-6 col-md-8 col-lg-8">
-                  <input type="text" className="form-control"
-                         value={this.state.model.name}
-                         onChange={
-                           (e) => {
-                             this.state.model.name = e.target.value;
-                             this.forceUpdate();
+        <div>
+          <div className="row">
+            <h2 className="col-md-12 headerPage"> Add a Product</h2>
+          </div>
+          <div className="row">
+          <div className=" panel panel-default plain">
+            <div className="panel-body">
+              <form className="form-horizontal">
+                <div className="form-group">
+                  <label className="col-sm-4 col-md-3 col-lg-4 control-label">Name</label>
+                  <div className="col-sm-6 col-md-6 col-lg-8">
+                    <input type="text" className="form-control"
+                           value={this.state.model.name}
+                           onChange={
+                             (e) => {
+                               this.state.model.name = e.target.value;
+                               this.forceUpdate();
+                             }
                            }
-                         }
-                  />
+                    />
+                  </div>
                 </div>
-              </div>
-
-              <div className="form-group">
-                <label className="col-sm-6 col-md-4 col-lg-4 control-label">Price</label>
-                <div className="col-sm-6 col-md-8 col-lg-8">
-                  <input type="number" className="form-control"
-                         value={this.state.model.price}
-                         onChange={
-                           (e) => {
-                             this.state.model.price = parseInt(e.target.value);
-                             this.forceUpdate();
-                           }
-                         }
-                  />
-                </div>
-              </div>
 
                 <div className="form-group">
-                  <label className="col-sm-6 col-md-4 col-lg-4 control-label">Stocked</label>
-                  <div className="col-sm-6 col-md-8 col-lg-8">
-                    <select  value={this.state.model.stocked}
-                             onChange={
-                               (e) => {
-                                 this.state.model.stocked = parseInt(e.target.value);
-                                 this.forceUpdate();
-                               }
+                  <label className="col-sm-6 col-md-3 col-lg-4 control-label">Price</label>
+                  <div className="col-sm-6 col-md-6 col-lg-8">
+                    <input type="number" className="form-control"
+                           value={this.state.model.price}
+                           onChange={
+                             (e) => {
+                               this.state.model.price = parseInt(e.target.value);
+                               this.forceUpdate();
                              }
-                    >
-                      <option value={BoolEnum.TRUE}>True</option>
-                      <option value={BoolEnum.FALSE}>False</option>
-                    </select>
-
-                  </div>
-              </div>
-
-
-
-              <div className="form-group">
-                <label className="col-sm-6 col-md-4 col-lg-4 control-label">Category</label>
-                <div className="col-sm-6 col-md-8 col-lg-8">
-                  <input type="text" className="form-control"
-                         value={this.state.model.category}
-                         onChange={
-                           (e) => {
-                             this.state.model.category = e.target.value;
-                             this.forceUpdate();
                            }
-                         }
-                  />
+                    />
+                  </div>
                 </div>
-              </div>
 
-              {
-                this.state.isAddSuccess ?
-                  <div className={`form-group has-error`}>
-                    <label className="col-sm-6 col-md-4 col-lg-4 control-label"></label>
-                    <span className="help-block col-sm-6 col-md-8 col-lg-8 m110" style={{paddingLeft:15, color:'blue'}}>
-                      Successfull Added data</span>
-                  </div> : null
-              }
+                  <div className="form-group">
+                    <label className="col-sm-6 col-md-4 col-lg-4 control-label">Stocked</label>
+                    <div className="col-sm-6 col-md-8 col-lg-8">
+                      <select  value={this.state.model.stocked}
+                               onChange={
+                                 (e) => {
+                                   this.state.model.stocked = parseInt(e.target.value);
+                                   this.forceUpdate();
+                                 }
+                               }
+                      >
+                        <option value={BoolEnum.TRUE}>True</option>
+                        <option value={BoolEnum.FALSE}>False</option>
+                      </select>
 
-              <div className="form-group">
-                <label className="col-sm-6 col-md-4 col-lg-4 control-label"></label>
-                <div className="col-sm-6 col-md-8 col-lg-8">
-                  <a className="btn btn-primary" onClick={() => this.ClickLogin()}>Add</a>
+                    </div>
                 </div>
-              </div>
-            </form>
+
+
+
+                <div className="form-group">
+                  <label className="col-sm-6 col-md-4 col-lg-4 control-label">Category</label>
+                  <div className="col-sm-6 col-md-8 col-lg-8">
+                    <input type="text" className="form-control"
+                           value={this.state.model.category}
+                           onChange={
+                             (e) => {
+                               this.state.model.category = e.target.value;
+                               this.forceUpdate();
+                             }
+                           }
+                    />
+                  </div>
+                </div>
+
+                {
+                  this.state.isAddSuccess ?
+                    <div className={`form-group has-error`}>
+                      <label className="col-sm-6 col-md-4 col-lg-4 control-label"></label>
+                      <span className="help-block col-sm-6 col-md-8 col-lg-8 m110" style={{paddingLeft:15, color:'blue'}}>
+                        Successfull Added data</span>
+                    </div> : null
+                }
+
+                <div className="form-group">
+                  <label className="col-sm-6 col-md-4 col-lg-4 control-label"></label>
+                  <div className="col-sm-6 col-md-8 col-lg-8">
+                    <a className="btn btn-primary" onClick={() => this.ClickLogin()}>Add</a>
+                  </div>
+                </div>
+              </form>
+            </div>
           </div>
-        </div>)
+        </div>
+        </div>
+    )
 
   }
 }

@@ -19,7 +19,7 @@ export class Header extends React.Component<any,any> {
       <Router >
         <div>
           <ul>
-              <button><Link to="/">Search Product</Link></button>
+              <button><Link to="/">Product List</Link></button>
               <button><Link to="/AddProduct">Add Product</Link></button>
               <button><Link to="/Delete">Delete Product</Link></button>
               <button><Link to="/TableData">Table Product</Link></button>

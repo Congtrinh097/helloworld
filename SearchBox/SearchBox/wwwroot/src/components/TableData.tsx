@@ -1,6 +1,6 @@
 import {ProductModel} from "../model/product-model";
 import * as React from 'react';
-import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
+import { BootstrapTable, TableHeaderColumn,SizePerPageDropDown } from 'react-bootstrap-table';
 
 
 // var productItems:ProductModel[] = [
@@ -16,6 +16,34 @@ import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
   export class TableDataBootStrap extends React.Component<any,any>
   {
     componentWillMount(){
+      this.setState({})
+    }
+
+    async getData(): Promise<any> {
+
+      let result = await fetch('/api/product/get_all',
+        {
+          headers: {
+            'auth': localStorage.getItem("user_token") + ""
+          },
+          method: 'GET',
+          /**
+           * make a fetch request with credentials such as cookies
+           */
+          credentials: 'include'
+        });
+
+      if(result.ok)
+      {
+        this.setState({ data: await result.json() });
+
+      }
+
+      return null;
+    }
+
+    componentDidMount(){
+      this.getData();
 
     }
 
@@ -69,8 +97,17 @@ import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
       debugger;
       return (
         <div>
-          <BootstrapTable data={this.props.productData}
+          <BootstrapTable data={this.state.data}
                           keyField="Id"
+                          fetchInfo={{dataTotalSize:10}}
+                          search={true}
+                          pagination={true}
+                          options={{
+                            noDataText: "Khong co du lieu",
+                            sizePerPage: 5,
+                            sizePerPageList: [10, 15, 20, 25, 30],
+                            page: 1
+                          }}
           >
             <TableHeaderColumn width="200" dataField="Id"
                                dataFormat={(r, data: ProductModel) => {
