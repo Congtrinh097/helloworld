@@ -4,13 +4,14 @@ import * as ReactDOM from "react-dom";
 
 import {SearchPage} from "./pages/searchpage";
 import {Header} from "./pages/Hearder";
-import {AnimationExample} from "./pages/RouterExample"
-
+import {ModalGallery} from "./pages/RouterExample"
+import {TableDataBootStrap} from "./components/TableData"
 
 
 ReactDOM.render(
   <div>
-    <AnimationExample/>
+    <hr/>
+    <Header/>
 
   </div>,
   document.getElementById("example")

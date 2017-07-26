@@ -1,6 +1,6 @@
 import * as React from "react";
 import {ProductModel} from "../model/product-model";
-
+import {TableDataBootStrap} from "../components/TableData";
 
 interface thisProps{
   product: ProductModel
@@ -182,9 +182,10 @@ export class FilterableProductTable extends React.Component<FilterableTableProps
             this.setState({products: filteredProducts});
           }}
         />
-        <TableData
-        products={this.state.products}
-      />
+        <TableDataBootStrap productData={this.state.products}/>
+        {/*<TableData*/}
+        {/*products={this.state.products}*/}
+      {/*/>*/}
       </div>
     );
   }

@@ -5,7 +5,8 @@ export class DeleteProductById extends React.Component<any,any> {
   componentWillMount(){
     this.setState({
       id: 0,
-      isSuccess: false
+      isSuccess: false,
+      MessageShow: "NONE"
     })
   }
 
@@ -22,13 +23,22 @@ export class DeleteProductById extends React.Component<any,any> {
         credentials: 'include',
         body: JSON.stringify(data)
       });
-    if (result.ok){
-      this.setState({
-        isSuccess: true
-      })
-      return "OK";
-    }
 
+    if (result.ok){
+
+      this.setState({
+        isSuccess: true,
+        MessageShow:  await result.text()
+      })
+
+    }else{
+
+      this.setState({
+        isSuccess: true,
+        MessageShow: "Request failed with unknow error"
+      })
+
+    }
   }
 
   ClickSubmit(){
@@ -63,7 +73,7 @@ export class DeleteProductById extends React.Component<any,any> {
               <div className={`form-group has-error`}>
                 <label className="col-sm-6 col-md-4 col-lg-4 control-label"></label>
                 <span className="help-block col-sm-6 col-md-8 col-lg-8 m110" style={{paddingLeft:15, color:'blue'}}>
-                      Successfull Delete data</span>
+                  {this.state.MessageShow}</span>
               </div> : null
           }
 

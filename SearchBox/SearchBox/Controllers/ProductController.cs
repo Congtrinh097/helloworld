@@ -43,10 +43,14 @@ namespace SearchBox.Controllers
             if (item != null)
             {
                 db.Products.Remove(item);
+                db.SaveChanges();
+                return "Deleted items with id " + Id.ToString();
+            }else
+            {
+                return "Ttem's id "+ Id.ToString() + " doesn't existing in table ";
             }
-            db.SaveChanges();
-
-            return "Deleted";
+           
+            return "Sorry! an unknown error occured!";
         }
 
 
