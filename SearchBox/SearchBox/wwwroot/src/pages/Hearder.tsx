@@ -19,15 +19,12 @@ export class Header extends React.Component<any,any> {
       <Router >
         <div>
           <ul>
-              <button><Link to="/">Product List</Link></button>
-              <button><Link to="/AddProduct">Add Product</Link></button>
-              <button><Link to="/Delete">Delete Product</Link></button>
-              <button><Link to="/TableData">Table Product</Link></button>
+              <button className="btn btn-default"><Link to="/">Product List</Link></button>
+              <button className="btn btn-default"><Link to="/AddProduct">Add Product</Link></button>
+              <button className="btn btn-default"><Link to="/Delete">Delete Product</Link></button>
+              <button className="btn btn-default"><Link to="/TableData">Table Product</Link></button>
 
           </ul>
-
-          <hr/>
-
           <Route exact path="/" component={SearchPage}/>
           <Route path="/AddProduct" component={AddProduct}/>
           <Route path="/Delete" component={DeleteProductById}/>

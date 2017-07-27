@@ -26,8 +26,11 @@
 
 .headerPage {
     text-align: center;
-    border: solid black 1px;
-    background-color: #3596e0;
+    align-content: center;
+    font-weight: bold;
+    border: solid darkgreen 2px;
+    height: 50px;
+    background-color: aliceblue;
 }
 .central_button
 {

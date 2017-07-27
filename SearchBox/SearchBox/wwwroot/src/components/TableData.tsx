@@ -34,7 +34,8 @@ interface thisProps {
           category:"",
           stocked:1
         }
-      })
+      });
+      this.getData();
     }
 
     async getData(){
@@ -61,7 +62,7 @@ interface thisProps {
     }
 
     componentDidMount(){
-      this.getData();
+
 
     }
 
@@ -155,7 +156,7 @@ interface thisProps {
       debugger;
       return ( this.state.isShow ?
         <div>
-          <ProductEdit data={this.state.dataModelEdit} ref={(e)=>{this.productEdit = e}}/>
+          <ProductEdit onUpdateCompleted={()=>{this.getData()}} data={this.state.dataModelEdit} ref={(e)=>{this.productEdit = e}}/>
           <BootstrapTable data={this.state.data}
                           keyField="Id"
                           fetchInfo={{dataTotalSize:10}}
@@ -163,15 +164,17 @@ interface thisProps {
                           pagination={true}
                           options={{
                             noDataText: "Khong co du lieu",
-                            sizePerPage: 5,
-                            sizePerPageList: [10, 15, 20, 25, 30],
+                            sizePerPage: 8,
+                            sizePerPageList: [5, 10, 20, 30],
                             page: 1
                           }}
           >
-            <TableHeaderColumn width="100" dataField="Id"
+            <TableHeaderColumn width="50" dataField="Id"
                                dataFormat={(r, data: ProductModel) => {
                                  return data.Id;
-                               }} dataSort={ true }>
+                               }}
+                               dataSort={ true }
+                               filter={{ type: 'TextFilter', delay: 200 }}>
               Id</TableHeaderColumn>
 
             <TableHeaderColumn width="200" dataField="name"
@@ -182,22 +185,29 @@ interface thisProps {
                                filter={{ type: 'TextFilter', delay: 1000 }}
             >
               Name</TableHeaderColumn>
-            <TableHeaderColumn width="200" dataField="price"
+            <TableHeaderColumn width="150" dataField="price"
                                dataFormat={(r, data: ProductModel) => {
                                  return data.price;
-                               }} dataSort={ true }>
+                               }} dataSort={ true }
+                               filter={ {
+                                 type: 'NumberFilter',
+                                 delay: 500,
+                                 numberComparators: [ '=', '>', '<' ]
+                               } }>
               Price</TableHeaderColumn>
 
             <TableHeaderColumn width="100" dataField="stocked"
                                dataFormat={(r, data: ProductModel) => {
                                  return data.stocked;
-                               }} dataSort={ true }>
+                               }} dataSort={ true }
+                               filter={ { type: 'SelectFilter', options: {'true':true, 'false':false} , selectText: 'Choose '} }>
               Stocked</TableHeaderColumn>
 
             <TableHeaderColumn width="100" dataField="category"
                                dataFormat={(r, data: ProductModel) => {
                                  return data.category;
-                               }} dataSort={ true }>
+                               }} dataSort={ true }
+                               filter={{ type: 'TextFilter', delay: 1000 }}>
               Category</TableHeaderColumn>
 
             <TableHeaderColumn width="120" dataField="action"

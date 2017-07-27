@@ -80,7 +80,7 @@ export class ProductEdit extends React.Component<any, thisState> {
         title: "Success",
         text: 'Update Successfully'
       });
-
+      this.props.onUpdateCompleted();
     }else {
       this.setState({
         UnvalidData:true,
