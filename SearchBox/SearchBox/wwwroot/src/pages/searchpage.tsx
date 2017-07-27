@@ -8,6 +8,7 @@ import {ProductDetailsModal} from "../components/ProductDetailsModal";
 export class SearchPage extends React.Component<any,any>{
   table: TableDataBootStrap;
   modal: ProductDetailsModal;
+
   componentDidMount() {
     this.table.show();
   }
@@ -34,7 +35,7 @@ export class SearchPage extends React.Component<any,any>{
 
 
           <ProductDetailsModal onAddCompleted = {()=>{this.table.getData()}} ref={(e)=>this.modal = e}/>
-          <TableDataBootStrap ref={(e)=>this.table = e}/>
+          <TableDataBootStrap  ref={(e)=>this.table = e}/>
 
         </div>
       )

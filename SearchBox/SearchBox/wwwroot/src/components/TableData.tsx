@@ -2,6 +2,7 @@ import {ProductModel} from "../model/product-model";
 import * as React from 'react';
 import { BootstrapTable, TableHeaderColumn,SizePerPageDropDown } from 'react-bootstrap-table';
 import {SweetAlertResultEnums, SweetAlerts, SweetAlertTypeEnums} from "../commons/sweet-alert";
+import {ProductEdit} from "./ProductEdit";
 
 // var productItems:ProductModel[] = [
 //   { Id: 1, name:'Test', price: 120 , category: 'Category1', stocked: 1},
@@ -14,16 +15,26 @@ import {SweetAlertResultEnums, SweetAlerts, SweetAlertTypeEnums} from "../common
 interface thisState {
   isShow?: boolean,
   data?: any
+  dataModelEdit?:ProductModel
 }
 
 interface thisProps {
   isShow?: boolean,
+
 }
 
   export class TableDataBootStrap extends React.Component<thisProps,thisState>
   {
+    private productEdit: ProductEdit
+
     componentWillMount(){
-      this.setState({})
+      this.setState({
+        dataModelEdit: { name:"",
+          price: 0,
+          category:"",
+          stocked:1
+        }
+      })
     }
 
     async getData(){
@@ -116,7 +127,15 @@ interface thisProps {
         }
       }
 
+    }
+
+    ClickEdit(data:ProductModel){
+      this.setState({
+        dataModelEdit: data
+      });
       debugger;
+      this.productEdit.show();
+
     }
 
     bindActionData(data: ProductModel) {
@@ -124,6 +143,11 @@ interface thisProps {
         <a className="btn-danger btn" onClick={() => {
             this.ClickDelete(data.Id)
         }}>Delete</a>
+        <a className="btn-warning btn" onClick={() => {
+          this.ClickEdit(data)
+        }}>Edit</a>
+        <a className="btn-info btn" onClick={() => {
+        }}>Details</a>
       </div>)
     }
 
@@ -131,6 +155,7 @@ interface thisProps {
       debugger;
       return ( this.state.isShow ?
         <div>
+          <ProductEdit data={this.state.dataModelEdit} ref={(e)=>{this.productEdit = e}}/>
           <BootstrapTable data={this.state.data}
                           keyField="Id"
                           fetchInfo={{dataTotalSize:10}}
@@ -143,7 +168,7 @@ interface thisProps {
                             page: 1
                           }}
           >
-            <TableHeaderColumn width="200" dataField="Id"
+            <TableHeaderColumn width="100" dataField="Id"
                                dataFormat={(r, data: ProductModel) => {
                                  return data.Id;
                                }} dataSort={ true }>
@@ -152,7 +177,10 @@ interface thisProps {
             <TableHeaderColumn width="200" dataField="name"
                                dataFormat={(r, data: ProductModel) => {
                                  return data.name;
-                               }} dataSort={ true }>
+                               }}
+                               dataSort={ true }
+                               filter={{ type: 'TextFilter', delay: 1000 }}
+            >
               Name</TableHeaderColumn>
             <TableHeaderColumn width="200" dataField="price"
                                dataFormat={(r, data: ProductModel) => {
@@ -172,7 +200,7 @@ interface thisProps {
                                }} dataSort={ true }>
               Category</TableHeaderColumn>
 
-            <TableHeaderColumn width="100" dataField="action"
+            <TableHeaderColumn width="120" dataField="action"
                                dataFormat={(r, data: ProductModel) => {
                                  return this.bindActionData(data)
                                }} dataSort={ false }>
