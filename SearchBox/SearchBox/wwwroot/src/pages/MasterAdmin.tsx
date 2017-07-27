@@ -16,6 +16,7 @@ export  class MasterAdmin extends React.Component<any , any>{
       <body>
 
         <HeaderMenu/>
+
         <section>
           <div className="container">
             <div className="row">
