@@ -3,6 +3,7 @@ import * as React from 'react';
 import { BootstrapTable, TableHeaderColumn,SizePerPageDropDown } from 'react-bootstrap-table';
 import {SweetAlertResultEnums, SweetAlerts, SweetAlertTypeEnums} from "../commons/sweet-alert";
 import {ProductEdit} from "./ProductEdit";
+import {ProductDetails} from "./ProductDetailsModal";
 
 // var productItems:ProductModel[] = [
 //   { Id: 1, name:'Test', price: 120 , category: 'Category1', stocked: 1},
@@ -26,6 +27,7 @@ interface thisProps {
   export class TableDataBootStrap extends React.Component<thisProps,thisState>
   {
     private productEdit: ProductEdit
+    private productDetail: ProductDetails
 
     componentWillMount(){
       this.setState({
@@ -139,6 +141,15 @@ interface thisProps {
 
     }
 
+    ClickDetails(data:ProductModel){
+      this.setState({
+        dataModelEdit: data
+      });
+      debugger;
+      this.productDetail.show();
+
+    }
+
     bindActionData(data: ProductModel) {
       return (<div>
         <a className="btn-danger btn" onClick={() => {
@@ -148,6 +159,7 @@ interface thisProps {
           this.ClickEdit(data)
         }}>Edit</a>
         <a className="btn-info btn" onClick={() => {
+          this.ClickDetails(data)
         }}>Details</a>
       </div>)
     }
@@ -157,6 +169,8 @@ interface thisProps {
       return ( this.state.isShow ?
         <div>
           <ProductEdit onUpdateCompleted={()=>{this.getData()}} data={this.state.dataModelEdit} ref={(e)=>{this.productEdit = e}}/>
+          <ProductDetails data={this.state.dataModelEdit} ref={(e)=>{this.productDetail = e}}/>
+
           <BootstrapTable data={this.state.data}
                           keyField="Id"
                           fetchInfo={{dataTotalSize:10}}
@@ -196,10 +210,10 @@ interface thisProps {
                                } }>
               Price</TableHeaderColumn>
 
-            <TableHeaderColumn width="100" dataField="stocked"
+            <TableHeaderColumn width="70" dataField="stocked"
                                dataFormat={(r, data: ProductModel) => {
-                                 return data.stocked;
-                               }} dataSort={ true }
+                                 return  data.stocked;
+                               }}
                                filter={ { type: 'SelectFilter', options: {'true':true, 'false':false} , selectText: 'Choose '} }>
               Stocked</TableHeaderColumn>
 
@@ -210,7 +224,7 @@ interface thisProps {
                                filter={{ type: 'TextFilter', delay: 1000 }}>
               Category</TableHeaderColumn>
 
-            <TableHeaderColumn width="120" dataField="action"
+            <TableHeaderColumn width="100" dataField="action"
                                dataFormat={(r, data: ProductModel) => {
                                  return this.bindActionData(data)
                                }} dataSort={ false }>

@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1b29d3d-9128-4617-becf-e87a07b8574f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/asset/css/layout.css" afterPath="$PROJECT_DIR$/asset/css/layout.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/ProductEdit.tsx" afterPath="$PROJECT_DIR$/src/components/ProductEdit.tsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/ProductAdd.tsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/ProductDetailsModal.tsx" afterPath="$PROJECT_DIR$/src/components/ProductDetailsModal.tsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/TableData.tsx" afterPath="$PROJECT_DIR$/src/components/TableData.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/Hearder.tsx" afterPath="$PROJECT_DIR$/src/pages/Hearder.tsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pages/searchpage.tsx" afterPath="$PROJECT_DIR$/src/pages/searchpage.tsx" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,13 +23,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TableData.tsx" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TableData.tsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/TableData.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="158" column="19" lean-forward="true" selection-start-line="158" selection-start-column="19" selection-end-line="158" selection-end-column="19" />
+            <state relative-caret-position="88">
+              <caret line="221" column="54" lean-forward="true" selection-start-line="221" selection-start-column="54" selection-end-line="221" selection-end-column="54" />
               <folding>
                 <element signature="e#0#52#0" expanded="true" />
+                <element signature="n#!!block;n#ClickDelete#0;n#TableDataBootStrap#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -49,19 +51,11 @@
       <file leaf-file-name="Hearder.tsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/Hearder.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="30" column="25" lean-forward="true" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.d.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/@types/react/index.d.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3824">
-              <caret line="254" column="8" lean-forward="false" selection-start-line="254" selection-start-column="8" selection-end-line="254" selection-end-column="8" />
-              <folding />
+            <state relative-caret-position="400">
+              <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -69,8 +63,8 @@
       <file leaf-file-name="ProductDetailsModal.tsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/ProductDetailsModal.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="656">
-              <caret line="41" column="33" lean-forward="true" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
+            <state relative-caret-position="108">
+              <caret line="87" column="56" lean-forward="false" selection-start-line="87" selection-start-column="56" selection-end-line="87" selection-end-column="56" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -78,23 +72,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProductEdit.tsx" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/ProductEdit.tsx">
+      <file leaf-file-name="product-model.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/product-model.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="82" column="37" lean-forward="true" selection-start-line="82" selection-start-column="37" selection-end-line="82" selection-end-column="37" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="64">
+              <caret line="4" column="2" lean-forward="false" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FilterableTable.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/FilterableTable.tsx">
+      <file leaf-file-name="ProductAdd.tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/ProductAdd.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2304">
-              <caret line="146" column="30" lean-forward="false" selection-start-line="146" selection-start-column="30" selection-end-line="146" selection-end-column="30" />
+            <state relative-caret-position="304">
+              <caret line="172" column="43" lean-forward="false" selection-start-line="172" selection-start-column="35" selection-end-line="172" selection-end-column="43" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -105,8 +97,18 @@
       <file leaf-file-name="AddProduct.tsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/AddProduct.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="960">
-              <caret line="61" column="58" lean-forward="false" selection-start-line="61" selection-start-column="1" selection-end-line="61" selection-end-column="58" />
+            <state relative-caret-position="160">
+              <caret line="125" column="52" lean-forward="false" selection-start-line="125" selection-start-column="48" selection-end-line="125" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProductEdit.tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/ProductEdit.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="156">
+              <caret line="29" column="29" lean-forward="false" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="29" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -118,7 +120,7 @@
         <entry file="file://$PROJECT_DIR$/asset/css/layout.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
-              <caret line="35" column="1" lean-forward="true" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
+              <caret line="35" column="1" lean-forward="false" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -127,8 +129,8 @@
       <file leaf-file-name="searchpage.tsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/searchpage.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="36" column="45" lean-forward="false" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="45" />
+            <state relative-caret-position="96">
+              <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -181,12 +183,13 @@
         <option value="$PROJECT_DIR$/src/components/DeleteProductById.tsx" />
         <option value="$PROJECT_DIR$/src/commons.tsx" />
         <option value="$PROJECT_DIR$/src/commons/sweet-alert.tsx" />
-        <option value="$PROJECT_DIR$/src/components/ProductDetailsModal.tsx" />
-        <option value="$PROJECT_DIR$/src/pages/searchpage.tsx" />
         <option value="$PROJECT_DIR$/asset/css/layout.css" />
         <option value="$PROJECT_DIR$/src/pages/Hearder.tsx" />
-        <option value="$PROJECT_DIR$/src/components/TableData.tsx" />
         <option value="$PROJECT_DIR$/src/components/ProductEdit.tsx" />
+        <option value="$PROJECT_DIR$/src/components/ProductAdd.tsx" />
+        <option value="$PROJECT_DIR$/src/pages/searchpage.tsx" />
+        <option value="$PROJECT_DIR$/src/components/ProductDetailsModal.tsx" />
+        <option value="$PROJECT_DIR$/src/components/TableData.tsx" />
       </list>
     </option>
   </component>
@@ -317,12 +320,12 @@
       <workItem from="1501033976668" duration="4865000" />
       <workItem from="1501038984081" duration="20113000" />
       <workItem from="1501081537900" duration="8938000" />
-      <workItem from="1501120137085" duration="5436000" />
+      <workItem from="1501120137085" duration="9254000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100549000" />
+    <option name="totallyTimeSpent" value="104367000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -369,19 +372,12 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="21" lean-forward="false" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/FilterableTable.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3349">
           <caret line="197" column="54" lean-forward="false" selection-start-line="197" selection-start-column="54" selection-end-line="197" selection-end-column="54" />
           <folding>
-            <element signature="e#0#31#0" expanded="true" />
+            <element signature="e#0#31#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -461,7 +457,7 @@
         <state relative-caret-position="2618">
           <caret line="155" column="31" lean-forward="true" selection-start-line="155" selection-start-column="31" selection-end-line="155" selection-end-column="32" />
           <folding>
-            <element signature="e#0#31#0" expanded="true" />
+            <element signature="e#0#31#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -550,14 +546,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/product-model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/webpack.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-104">
@@ -624,16 +612,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/AddProduct.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="61" column="58" lean-forward="false" selection-start-line="61" selection-start-column="1" selection-end-line="61" selection-end-column="58" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/@types/react/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3824">
@@ -647,7 +625,7 @@
         <state relative-caret-position="2304">
           <caret line="146" column="30" lean-forward="false" selection-start-line="146" selection-start-column="30" selection-end-line="146" selection-end-column="30" />
           <folding>
-            <element signature="e#0#31#0" expanded="true" />
+            <element signature="e#0#31#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -665,23 +643,53 @@
     <entry file="file://$PROJECT_DIR$/asset/css/layout.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="35" column="1" lean-forward="true" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
+          <caret line="35" column="1" lean-forward="false" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ProductEdit.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="29" column="29" lean-forward="false" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/Hearder.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="30" column="25" lean-forward="true" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+        <state relative-caret-position="400">
+          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/AddProduct.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="125" column="52" lean-forward="false" selection-start-line="125" selection-start-column="48" selection-end-line="125" selection-end-column="52" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ProductAdd.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="172" column="43" lean-forward="false" selection-start-line="172" selection-start-column="35" selection-end-line="172" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/ProductDetailsModal.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="656">
-          <caret line="41" column="33" lean-forward="true" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
+        <state relative-caret-position="108">
+          <caret line="87" column="56" lean-forward="false" selection-start-line="87" selection-start-column="56" selection-end-line="87" selection-end-column="56" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
@@ -690,30 +698,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/searchpage.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="36" column="45" lean-forward="false" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="45" />
+        <state relative-caret-position="96">
+          <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/product-model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="4" column="2" lean-forward="false" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/TableData.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="158" column="19" lean-forward="true" selection-start-line="158" selection-start-column="19" selection-end-line="158" selection-end-column="19" />
+        <state relative-caret-position="88">
+          <caret line="221" column="54" lean-forward="true" selection-start-line="221" selection-start-column="54" selection-end-line="221" selection-end-column="54" />
           <folding>
             <element signature="e#0#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ProductEdit.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="82" column="37" lean-forward="true" selection-start-line="82" selection-start-column="37" selection-end-line="82" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
+            <element signature="n#!!block;n#ClickDelete#0;n#TableDataBootStrap#0" expanded="false" />
           </folding>
         </state>
       </provider>

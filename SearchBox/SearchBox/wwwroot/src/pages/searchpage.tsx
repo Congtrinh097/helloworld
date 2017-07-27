@@ -2,12 +2,12 @@ import * as React from "react";
 import {FilterableProductTable} from "../components/FilterableTable";
 import {ProductModel} from "../model/product-model";
 import {TableDataBootStrap} from "../components/TableData";
-import {ProductDetailsModal} from "../components/ProductDetailsModal";
+import {ProductAdd} from "../components/ProductAdd";
 
 
 export class SearchPage extends React.Component<any,any>{
   table: TableDataBootStrap;
-  modal: ProductDetailsModal;
+  modal: ProductAdd;
 
   componentDidMount() {
     this.table.show();
@@ -34,7 +34,7 @@ export class SearchPage extends React.Component<any,any>{
           }}>Add Product</button>
 
 
-          <ProductDetailsModal onAddCompleted = {()=>{this.table.getData()}} ref={(e)=>this.modal = e}/>
+          <ProductAdd onAddCompleted = {()=>{this.table.getData()}} ref={(e)=>this.modal = e}/>
           <TableDataBootStrap  ref={(e)=>this.table = e}/>
 
         </div>
