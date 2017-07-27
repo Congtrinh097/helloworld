@@ -1,0 +1,9 @@
+@import url(bootstrap.min.js);
+@import url(contact.js);
+@import url(gmaps.js);
+@import url(html5shiv.js);
+@import url(jquery.js);
+@import url(jquery.prettyPhoto.js);
+@import url(jquery.scrollUp.min.js);
+@import url(main.js);
+@import url(price-range);

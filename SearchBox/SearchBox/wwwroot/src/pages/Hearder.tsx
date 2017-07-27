@@ -7,7 +7,7 @@ import Link from 'react-router-dom/Link';
 import {SearchPage} from "./searchpage";
 import {DeleteProductById} from "../components/DeleteProductById";
 import {AddProduct} from "./AddProduct";
-import {TableDataBootStrap} from "../components/TableData";
+import {Master} from "./Master";
 
 
 
@@ -18,17 +18,17 @@ export class Header extends React.Component<any,any> {
     return(
       <Router >
         <div>
-          <ul>
-              <button className="btn btn-default"><Link to="/">Product List</Link></button>
-              <button className="btn btn-default"><Link to="/AddProduct">Add Product</Link></button>
-              <button className="btn btn-default"><Link to="/Delete">Delete Product</Link></button>
-              <button className="btn btn-default"><Link to="/TableData">Table Product</Link></button>
+          {/*<ul>*/}
+              {/*<button className="btn btn-default"><Link to="/">Product List</Link></button>*/}
+              {/*<button className="btn btn-default"><Link to="/AddProduct">Add Product</Link></button>*/}
+              {/*<button className="btn btn-default"><Link to="/Delete">Delete Product</Link></button>*/}
+              {/*<button className="btn btn-default"><Link to="/TableData">Table Product</Link></button>*/}
 
-          </ul>
-          <Route exact path="/" component={SearchPage}/>
+          {/*</ul>*/}
+          <Route path="/Product" component={SearchPage}/>
           <Route path="/AddProduct" component={AddProduct}/>
           <Route path="/Delete" component={DeleteProductById}/>
-          <Route path="/TableData" component={TableDataBootStrap}/>
+          <Route exact path="/" component={Master}/>
 
         </div>
       </Router>

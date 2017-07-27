@@ -1,8 +1,8 @@
 import * as React from "react";
-import {FilterableProductTable} from "../components/FilterableTable";
-import {ProductModel} from "../model/product-model";
+
 import {TableDataBootStrap} from "../components/TableData";
 import {ProductAdd} from "../components/ProductAdd";
+
 
 
 export class SearchPage extends React.Component<any,any>{
@@ -17,6 +17,7 @@ export class SearchPage extends React.Component<any,any>{
 
       return(
         <div>
+
           <div className="row">
             <h2 className="col-md-12 headerPage"> List of Product</h2>
           </div>

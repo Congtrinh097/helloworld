@@ -199,7 +199,7 @@ interface thisProps {
                                filter={{ type: 'TextFilter', delay: 1000 }}
             >
               Name</TableHeaderColumn>
-            <TableHeaderColumn width="150" dataField="price"
+            <TableHeaderColumn width="100" dataField="price"
                                dataFormat={(r, data: ProductModel) => {
                                  return data.price;
                                }} dataSort={ true }
@@ -224,7 +224,7 @@ interface thisProps {
                                filter={{ type: 'TextFilter', delay: 1000 }}>
               Category</TableHeaderColumn>
 
-            <TableHeaderColumn width="100" dataField="action"
+            <TableHeaderColumn  width="120" dataField="action"
                                dataFormat={(r, data: ProductModel) => {
                                  return this.bindActionData(data)
                                }} dataSort={ false }>

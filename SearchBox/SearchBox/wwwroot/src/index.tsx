@@ -6,13 +6,13 @@ import {SearchPage} from "./pages/searchpage";
 import {Header} from "./pages/Hearder";
 import {ModalGallery} from "./pages/RouterExample"
 import {TableDataBootStrap} from "./components/TableData"
+import {MasterAdmin} from "./pages/MasterAdmin";
 
 
 ReactDOM.render(
   <div>
-    <hr/>
-    <Header/>
-
+    {/*<Header/>*/}
+    <MasterAdmin/>
   </div>,
   document.getElementById("example")
 );
