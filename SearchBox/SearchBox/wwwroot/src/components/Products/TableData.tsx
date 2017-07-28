@@ -1,7 +1,7 @@
-import {ProductModel} from "../model/product-model";
+import {ProductModel} from "../../model/product-model";
 import * as React from 'react';
 import { BootstrapTable, TableHeaderColumn,SizePerPageDropDown } from 'react-bootstrap-table';
-import {SweetAlertResultEnums, SweetAlerts, SweetAlertTypeEnums} from "../commons/sweet-alert";
+import {SweetAlertResultEnums, SweetAlerts, SweetAlertTypeEnums} from "../../commons/sweet-alert";
 import {ProductEdit} from "./ProductEdit";
 import {ProductDetails} from "./ProductDetailsModal";
 
@@ -32,10 +32,13 @@ interface thisProps {
 
     componentWillMount(){
       this.setState({
-        dataModelEdit: { name:"",
+        dataModelEdit: {
+          name:"",
           price: 0,
-          category:"",
-          stocked:1
+          cate_id:0,
+          stocked:1,
+          description: '',
+          image: ''
         }
       });
       this.getData();
@@ -180,7 +183,7 @@ interface thisProps {
                           search={true}
                           pagination={true}
                           options={{
-                            noDataText: "Khong co du lieu",
+                            noDataText: "No data to show",
                             sizePerPage: 8,
                             sizePerPageList: [5, 10, 20, 30],
                             page: 1
@@ -194,14 +197,22 @@ interface thisProps {
                                filter={{ type: 'TextFilter', delay: 200 }}>
               Id</TableHeaderColumn>
 
-            <TableHeaderColumn width="200" dataField="name"
+            <TableHeaderColumn width="100" dataField="name"
                                dataFormat={(r, data: ProductModel) => {
                                  return data.name;
                                }}
                                dataSort={ true }
                                filter={{ type: 'TextFilter', delay: 1000 }}
-            >
-              Name</TableHeaderColumn>
+            >Name</TableHeaderColumn>
+
+            <TableHeaderColumn width="200" dataField="description"
+                               dataFormat={(r, data: ProductModel) => {
+                                 return data.description;
+                               }}
+                               dataSort={ true }
+                               filter={{ type: 'TextFilter', delay: 1000 }}
+            >Description</TableHeaderColumn>
+
             <TableHeaderColumn width="100" dataField="price"
                                dataFormat={(r, data: ProductModel) => {
                                  return data.price;
@@ -222,7 +233,7 @@ interface thisProps {
 
             <TableHeaderColumn width="100" dataField="category"
                                dataFormat={(r, data: ProductModel) => {
-                                 return data.category;
+                                 return data.cate_id;
                                }} dataSort={ true }
                                filter={{ type: 'TextFilter', delay: 1000 }}>
               Category</TableHeaderColumn>

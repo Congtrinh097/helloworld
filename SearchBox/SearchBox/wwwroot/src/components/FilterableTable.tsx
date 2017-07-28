@@ -1,6 +1,6 @@
 import * as React from "react";
 import {ProductModel} from "../model/product-model";
-import {TableDataBootStrap} from "../components/TableData";
+import {TableDataBootStrap} from "./Products/TableData";
 
 interface thisProps{
   product: ProductModel

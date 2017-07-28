@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {Modal, Button, Form, FormGroup, Col} from 'react-bootstrap';
-import {ProductModel} from "../model/product-model";
-import { SweetAlerts} from "../commons/sweet-alert";
+import {ProductModel} from "../../model/product-model";
+import { SweetAlerts} from "../../commons/sweet-alert";
 
 export enum BoolEnum
 {
@@ -63,9 +63,42 @@ export class ProductDetails extends React.Component<any, thisState> {
                 <label className="col-sm-6 col-md-4 col-lg-4 control-label">Category</label>
                 <div className="col-sm-6 col-md-8 col-lg-8">
                   <input type="text" className="form-control"
-                         value={this.state.model.category}
+                         value={this.state.model.cate_id}
 
                          readOnly={true}
+                  />
+                </div>
+              </div>
+
+              <div className="form-group">
+                <label className="col-sm-6 col-md-4 col-lg-4 control-label">Description</label>
+                <div className="col-sm-6 col-md-8 col-lg-8">
+                  <input type="text" className="form-control"
+                         value={this.state.model.description}
+                         readOnly={true}
+                         onChange={
+                           (e) => {
+                             this.state.model.description = e.target.value;
+                             this.forceUpdate();
+                           }
+                         }
+                  />
+                </div>
+              </div>
+
+
+              <div className="form-group">
+                <label className="col-sm-6 col-md-4 col-lg-4 control-label">Image</label>
+                <div className="col-sm-6 col-md-8 col-lg-8">
+                  <input type="text" className="form-control"
+                         value={this.state.model.image}
+                         readOnly={true}
+                         onChange={
+                           (e) => {
+                             this.state.model.image = e.target.value;
+                             this.forceUpdate();
+                           }
+                         }
                   />
                 </div>
               </div>

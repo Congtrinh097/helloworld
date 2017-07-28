@@ -15,9 +15,9 @@ export class HeaderMenu extends React.Component
           </div>
           <ul className="nav navbar-nav">
             <li className="active"><a href="/">Home</a></li>
-            <li><a href="/product">Products</a></li>
-            <li><a href="/AddProduct">Add</a></li>
-            <li><a href="/Delete">Delete</a></li>
+            <li><a href="/product-management">Products</a></li>
+            <li><a href="/user-management">Users</a></li>
+            <li><a href="/category-management">Category</a></li>
           </ul>
           <ul className="nav navbar-nav navbar-right">
             <li><a href="#" ><span className="glyphicon glyphicon-user"></span> Sign Up</a></li>

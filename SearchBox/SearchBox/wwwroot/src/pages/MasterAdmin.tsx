@@ -3,10 +3,12 @@ import {HeaderMenu} from "./admin/HeaderMenu";
 
 import Router from 'react-router-dom/BrowserRouter';
 import Route from 'react-router-dom/Route';
-import {SearchPage} from "./searchpage";
+import {ProductManager} from "./ProductManager";
 import {AddProduct} from "./AddProduct";
 import {DeleteProductById} from "../components/DeleteProductById";
-import {SidebarMenu} from "./admin/SideBarMenu";
+import {CategoryManager} from "./CategoryManager";
+import {UserManager} from "./UserManager";
+
 
 
 
@@ -15,8 +17,7 @@ export  class MasterAdmin extends React.Component<any , any>{
   render(){
     return(
 
-      <body>
-
+     <div>
         <HeaderMenu/>
         {/*<SidebarMenu/>*/}
         <section>
@@ -26,10 +27,10 @@ export  class MasterAdmin extends React.Component<any , any>{
                 <div>
 
                   {/*</ul>*/}
-                  <Route exact path="/" component={SearchPage}/>
-                  <Route path="/product" component={SearchPage}/>
-                  <Route path="/AddProduct" component={AddProduct}/>
-                  <Route path="/Delete" component={DeleteProductById}/>
+                  <Route exact path="/" component={ProductManager}/>
+                  <Route path="/product-management" component={ProductManager}/>
+                  <Route path="/category-management" component={CategoryManager}/>
+                  <Route path="/user-management" component={UserManager}/>
 
 
                 </div>
@@ -41,7 +42,7 @@ export  class MasterAdmin extends React.Component<any , any>{
         </section>
 
         {/*<LayoutFooter/>*/}
-      </body>
+      </div>
 
     )
   }

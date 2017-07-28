@@ -55,8 +55,25 @@
     <Compile Include="Migrations\201707240800261_trinh_000001.Designer.cs">
       <DependentUpon>201707240800261_trinh_000001.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201707280630551_trinh_000002.cs" />
+    <Compile Include="Migrations\201707280630551_trinh_000002.Designer.cs">
+      <DependentUpon>201707280630551_trinh_000002.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707280743434_trinh_000003.cs" />
+    <Compile Include="Migrations\201707280743434_trinh_000003.Designer.cs">
+      <DependentUpon>201707280743434_trinh_000003.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707280754132_trinh_000004.cs" />
+    <Compile Include="Migrations\201707280754132_trinh_000004.Designer.cs">
+      <DependentUpon>201707280754132_trinh_000004.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Product.cs" />
+    <Compile Include="Model\ProductImage.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="Model\UserInfo.cs" />
+    <Compile Include="Model\UserToken.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -66,6 +83,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201707240800261_trinh_000001.resx">
       <DependentUpon>201707240800261_trinh_000001.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707280630551_trinh_000002.resx">
+      <DependentUpon>201707280630551_trinh_000002.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707280743434_trinh_000003.resx">
+      <DependentUpon>201707280743434_trinh_000003.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707280754132_trinh_000004.resx">
+      <DependentUpon>201707280754132_trinh_000004.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

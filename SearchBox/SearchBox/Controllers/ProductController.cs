@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using DataEntity.Model;
 using DataEntity;
 
 namespace SearchBox.Controllers
@@ -16,12 +17,6 @@ namespace SearchBox.Controllers
         public List<Product> Get()
         {
             return db.Products.ToList();
-        }
-
-        // GET: api/Product/5
-        public string Get(int id)
-        {
-            return "value";
         }
 
         // POST: api/Product
@@ -45,8 +40,11 @@ namespace SearchBox.Controllers
             if (item != null) {
                 item.name = request.name;
                 item.price = request.price;
-                item.category = request.category;
+                item.cate_id = request.cate_id;
                 item.stocked = request.stocked;
+                item.description = request.description;
+                item.image = request.image;
+
                 db.SaveChanges();
                 return "Update successfull";
             }else

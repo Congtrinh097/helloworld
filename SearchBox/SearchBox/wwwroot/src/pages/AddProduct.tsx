@@ -19,10 +19,12 @@ export class AddProduct extends React.Component<any, thisState> {
   componentWillMount() {
     this.setState({
       model:{
-        name:'',
+        name:"",
         price: 0,
-        category: '',
-        stocked: 1
+        cate_id:0,
+        stocked:1,
+        description: '',
+        image: ''
       }
     });
   }
@@ -42,10 +44,12 @@ export class AddProduct extends React.Component<any, thisState> {
     if (result.ok){
       this.setState({isAddSuccess:true,
         model:{
-          name:'',
+          name:"",
           price: 0,
-          category: '',
-          stocked: 1
+          cate_id:0,
+          stocked:1,
+          description: '',
+          image: ''
       }
 
       });
@@ -136,10 +140,10 @@ export class AddProduct extends React.Component<any, thisState> {
                   <label className="col-sm-6 col-md-4 col-lg-4 control-label">Category</label>
                   <div className="col-sm-6 col-md-8 col-lg-8">
                     <input type="text" className="form-control"
-                           value={this.state.model.category}
+                           value={this.state.model.cate_id}
                            onChange={
                              (e) => {
-                               this.state.model.category = e.target.value;
+                               this.state.model.cate_id = parseInt(e.target.value);
                                this.forceUpdate();
                              }
                            }

@@ -4,11 +4,11 @@ import * as React from 'react';
 
 
 const options = {
-  onOpen: props => console.log(props.foo),
-  onClose: props => console.log(props.foo),
+  // onOpen: props => console.log(props.foo),
+  // onClose: props => console.log(props.foo),
   autoClose: 6000,
   type: toast.TYPE.INFO,
-  hideProgressBar: false,
+  hideProgressBar: true,
   position: toast.POSITION.TOP_RIGHT
 };
 
