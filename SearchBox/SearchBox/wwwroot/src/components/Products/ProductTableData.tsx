@@ -98,7 +98,7 @@ export class ProductTableData extends React.Component<thisProps,thisState>
   }
 
   async ClickDelete(id:number){
-    debugger;
+
     let result = await SweetAlerts.show({
       title: 'Confirmation',
       text: 'Are you sure?',
@@ -109,9 +109,9 @@ export class ProductTableData extends React.Component<thisProps,thisState>
 
     if (result == SweetAlertResultEnums.Confirm) {
 
-      debugger;
+
       let resultDelete  = await this.postDelete("/api/product/remove",id);
-      debugger;
+
       if (resultDelete) {
         SweetAlerts.show({
           title: "Success",

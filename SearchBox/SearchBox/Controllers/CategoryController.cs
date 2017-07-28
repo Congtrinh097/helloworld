@@ -52,5 +52,26 @@ namespace SearchBox.Controllers
             }
         }
 
+        // POST: api/cate
+        [HttpPost, Route("api/cate/remove")]
+        [AllowAnonymous]
+        public string Remove([FromBody]int Id)
+        {
+            Category item = db.Categories.Find(Id);
+            if (item != null)
+            {
+                db.Categories.Remove(item);
+                db.SaveChanges();
+                return "Deleted items with id " + Id.ToString();
+            }
+            else
+            {
+                return "Ttem's id " + Id.ToString() + " doesn't existing in table ";
+            }
+
+            return "Sorry! an unknown error occured!";
+        }
+
+
     }
 }

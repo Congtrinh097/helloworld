@@ -42,8 +42,61 @@ export  class CategoryTableData extends React.Component<CategoryTableDataProps,C
     return null;
   }
 
-  ClickDelete(id:number){
+  async postDelete(url:string, data:number)
+  {
+    debugger;
+    let result = await fetch(url,
+      {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'auth': localStorage.getItem("user_token") + ""
+        },
+        method: 'POST',
+        credentials: 'include',
+        body: JSON.stringify(data)
+      });
 
+    if (result.ok){
+      return true;
+    }else{
+      return false;
+    }
+  }
+
+  async ClickDelete(id:number){
+
+    let result = await SweetAlerts.show({
+      title: 'Confirmation',
+      text: 'Are you sure?',
+      type: SweetAlertTypeEnums.Warning,
+      showCancelButton: true,
+      confirmButtonText: 'Delete',
+    });
+
+    if (result == SweetAlertResultEnums.Confirm) {
+
+
+      let resultDelete  = await this.postDelete("/api/cate/remove",id);
+
+      if (resultDelete) {
+        SweetAlerts.show({
+          title: "Success",
+          type: SweetAlertTypeEnums.Success,
+          text: 'Deleted Successfully'
+        });
+
+
+        this.getData();
+      }else {
+        SweetAlerts.show({
+          title: "Error",
+          type: SweetAlertTypeEnums.Error,
+          text: 'Cannot delete this item, please try again!'
+        });
+
+      }
+    }
   }
 
   ClickEdit(data:CategoryModel){
@@ -59,6 +112,7 @@ export  class CategoryTableData extends React.Component<CategoryTableDataProps,C
         this.ClickDelete(data.Id)
       }}>Delete</a>
       <a className="btn-warning btn" onClick={() => {
+        debugger;
         this.ClickEdit(data)
       }}>Edit</a>
       <a className="btn-info btn" onClick={() => {

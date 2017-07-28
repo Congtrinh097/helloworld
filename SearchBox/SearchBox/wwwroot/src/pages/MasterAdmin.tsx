@@ -1,11 +1,8 @@
 import * as React from  'react'
 import {HeaderMenu} from "./admin/HeaderMenu";
-
 import Router from 'react-router-dom/BrowserRouter';
 import Route from 'react-router-dom/Route';
 import {ProductManager} from "./ProductManager";
-import {AddProduct} from "./AddProduct";
-import {DeleteProductById} from "../components/DeleteProductById";
 import {CategoryManager} from "./CategoryManager";
 import {UserManager} from "./UserManager";
 
