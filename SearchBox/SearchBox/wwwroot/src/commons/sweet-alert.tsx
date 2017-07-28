@@ -39,7 +39,7 @@ export class SweetAlerts {
       }
       window['swal']({
           title: request.title,
-          text: request.text,
+        text: request.text,
           type: type,
           showCancelButton: !!request.showCancelButton,
           confirmButtonClass: request.confirmButtonClass || "btn-danger",

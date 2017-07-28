@@ -8,6 +8,7 @@ import {SearchPage} from "./searchpage";
 import {DeleteProductById} from "../components/DeleteProductById";
 import {AddProduct} from "./AddProduct";
 import {Master} from "./Master";
+import {MasterAdmin} from "./MasterAdmin";
 
 
 
@@ -18,17 +19,8 @@ export class Header extends React.Component<any,any> {
     return(
       <Router >
         <div>
-          {/*<ul>*/}
-              {/*<button className="btn btn-default"><Link to="/">Product List</Link></button>*/}
-              {/*<button className="btn btn-default"><Link to="/AddProduct">Add Product</Link></button>*/}
-              {/*<button className="btn btn-default"><Link to="/Delete">Delete Product</Link></button>*/}
-              {/*<button className="btn btn-default"><Link to="/TableData">Table Product</Link></button>*/}
-
-          {/*</ul>*/}
-          <Route path="/Product" component={SearchPage}/>
-          <Route path="/AddProduct" component={AddProduct}/>
-          <Route path="/Delete" component={DeleteProductById}/>
-          <Route exact path="/" component={Master}/>
+          <Route exact path="/" component={MasterAdmin}/>
+          <Route path="/user" component={Master}/>
 
         </div>
       </Router>

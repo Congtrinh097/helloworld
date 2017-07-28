@@ -5,6 +5,7 @@ import {SweetAlertResultEnums, SweetAlerts, SweetAlertTypeEnums} from "../common
 import {ProductEdit} from "./ProductEdit";
 import {ProductDetails} from "./ProductDetailsModal";
 
+
 // var productItems:ProductModel[] = [
 //   { Id: 1, name:'Test', price: 120 , category: 'Category1', stocked: 1},
 //   { Id: 2, name:'Test', price: 120 , category: 'Category1', stocked: 1},
@@ -120,6 +121,8 @@ interface thisProps {
             title: "Success",
             text: 'Deleted Successfully'
           });
+
+
           this.getData();
         }else {
           SweetAlerts.show({

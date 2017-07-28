@@ -29,10 +29,32 @@ namespace SearchBox.Controllers
         [AllowAnonymous]
         public void Add([FromBody]Product request)
         {
-            Product item = request;
+           
             db.Products.Add(request);
             db.SaveChanges();
         }
+
+
+        // POST: api/Product/update
+        [HttpPost, Route("api/product/update")]
+        [AllowAnonymous]
+        public string update([FromBody]Product request)
+        {
+           
+            Product item = db.Products.Where(x => x.Id == request.Id).FirstOrDefault();
+            if (item != null) {
+                item.name = request.name;
+                item.price = request.price;
+                item.category = request.category;
+                item.stocked = request.stocked;
+                db.SaveChanges();
+                return "Update successfull";
+            }else
+            {
+                return "Not found item";
+            }   
+        }
+
 
         // POST: api/Product
         [HttpPost, Route("api/product/remove")]
@@ -52,7 +74,6 @@ namespace SearchBox.Controllers
            
             return "Sorry! an unknown error occured!";
         }
-
 
 
         // PUT: api/Product/5

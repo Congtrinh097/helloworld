@@ -1,8 +1,7 @@
 import * as React from 'react';
 import {Modal, Button, Form, FormGroup, Col} from 'react-bootstrap';
 import {ProductModel} from "../model/product-model";
-import { SweetAlerts} from "../commons/sweet-alert";
-
+import { ToastManager} from "../commons/toast-info";
 export enum BoolEnum
 {
   TRUE = 1,
@@ -54,13 +53,15 @@ export class ProductEdit extends React.Component<any, thisState> {
         body: JSON.stringify(data)
       });
     if (result.ok){
-      this.setState({
-        model:{
-          name:'',
-          price: 0,
-          category: '',
-          stocked: 1
-        }
+
+
+        this.setState({
+          model:{
+            name:'',
+            price: 0,
+            category: '',
+            stocked: 1
+          }
 
       });
       return ResultEnum.OK;
@@ -73,13 +74,13 @@ export class ProductEdit extends React.Component<any, thisState> {
 
 
   async clickUpdate() {
-    let result = await this.postRequest("/api/product/add", this.state.model); //temporaty use add API
+    let result = await this.postRequest("/api/product/update", this.state.model);
     if (result == ResultEnum.OK){
       this.close()
-      SweetAlerts.show({
-        title: "Success",
-        text: 'Update Successfully'
-      });
+
+      ToastManager.ShowToastSuccess("Success","Update data successful");
+
+
       this.props.onUpdateCompleted();
     }else {
       this.setState({

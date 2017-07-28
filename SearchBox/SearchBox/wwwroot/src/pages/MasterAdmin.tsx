@@ -6,6 +6,8 @@ import Route from 'react-router-dom/Route';
 import {SearchPage} from "./searchpage";
 import {AddProduct} from "./AddProduct";
 import {DeleteProductById} from "../components/DeleteProductById";
+import {SidebarMenu} from "./admin/SideBarMenu";
+
 
 
 export  class MasterAdmin extends React.Component<any , any>{
@@ -16,7 +18,7 @@ export  class MasterAdmin extends React.Component<any , any>{
       <body>
 
         <HeaderMenu/>
-
+        {/*<SidebarMenu/>*/}
         <section>
           <div className="container">
             <div className="row">
@@ -25,7 +27,7 @@ export  class MasterAdmin extends React.Component<any , any>{
 
                   {/*</ul>*/}
                   <Route exact path="/" component={SearchPage}/>
-                  <Route exact path="/product" component={SearchPage}/>
+                  <Route path="/product" component={SearchPage}/>
                   <Route path="/AddProduct" component={AddProduct}/>
                   <Route path="/Delete" component={DeleteProductById}/>
 
